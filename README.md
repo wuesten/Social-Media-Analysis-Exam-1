@@ -12,7 +12,7 @@ Based on the first graph, we can see that the ratings of the restaurants are oft
 
 The plot below examines when comments have been written. The dataset includes ratings from 2006 to 2022, with the majority of ratings from 2015 & 2016. Furthermore, it can be seen that the months do not have a large influence on the visits. There is only a drop in ratings in November and December.<br>
 
-<img src="/output/distribution_text_rating.png" alt="Alt text" title="Optional title">
+<img src="/output/distribution_rating_year_month.png" alt="Alt text" title="Optional title">
 
 ### Results
 
