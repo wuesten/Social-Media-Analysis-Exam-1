@@ -123,6 +123,9 @@ acc_score = accuracy_score(test_df["stars"] + 1, test_df["rating"])
 ```
 ### Results
 
+In this sentiment analysis, different approaches from Transformer to Bag of Words and TF-ID have been shown. It is not surprising that the transformers that have been trained on very large data sets perform better. Furthermore, a fine tuning of one transformer resulted in a significant increase from 63% to 80% acccuracy. It can be assumed that an improvement through longer fine tuning would show even better results. But due to limited hardware, I could only do 3 epochs, which took 6 hours. <br>
+The TF-ID and Bag of Words approaches produced similar results for the same classifiers. The exception is linear regression, because it performed much better with TF-ID. The best results were achieved with the random forest classifier. With TF-ID 51.2% and with Bag of words 52.6% accuracy was achieved.
+
 |                      model 	| accuracy 	|
 |---------------------------:	|---------:	|
 |                Transformer 	| 0.630378 	|
@@ -135,4 +138,14 @@ acc_score = accuracy_score(test_df["stars"] + 1, test_df["rating"])
 |         TF-ID: linear Reg. 	| 0.438017 	|
 |        TF-ID: RandomForest 	| 0.519008 	|
 
+
+Finally, all experiments are presented in a Confusion Matrix. In general the size of the test data is always the same with one exception for the pre-trained transformers, as they were already trained.  With the transformers, it can be seen that the deviation is often only 1 to the correct value. This is already a very good result. With the fine tuned transformer, the deviation in the lower ratings is very small. Most deviations can be seen in the rating of 4.  <br>
+The experiments of Bag of Words have performed very badly on labels with a poor rating. This could be because there are few poorly rated labels. The Random Forest from the accurary performed best, but this is only due to the fact that it almost always had a prediction of 5. <br>
+TF-ID's experiments performed very similarly to Bag of Words. In general, it can be seen that low scores are not well recognised. Classifiers that predict high ratings across the board could achieve higher accuracy because the dataset contains more good ratings.
+
 <img src="/output/conf_overview.png" alt="Alt text" title="Optional title">
+
+### Outlook
+
+Based on the sentiment analysis, it could be shown that a text classification is well possible. It was found that classifiers often scored very high on Bag of Words and TF-ID. This is due to the fact that the data set is not balanced and for the most part there are good ratings. This could be improved by adjusting the data set or by using methods such as SMOTE to oversample the data set. This would make the model better at predicting low ratings. <br>
+The fine tuned Transformer finished best. This could still be improved by longer training. This could be achieved by training the model in a cloud, because the hardware of laptops is very limited compared to the resources needed to train huge neural networks.
