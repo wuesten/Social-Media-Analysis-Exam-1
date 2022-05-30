@@ -14,6 +14,25 @@ The plot below examines when comments have been written. The dataset includes ra
 
 <img src="/output/distribution_rating_year_month.png" alt="Alt text" title="Optional title">
 
+### Fine-tuning of Transformer
+
+A Transformer fine tuned was used for the sentiment analysis. For this purpose, a pre-trained transformer was used as a starting point which was trained to classify reviews into a rating scale of 1-5. Fine-tuning is very resource-intensive, so you have to use batch processing. Huggingface provides a trainer that solves such things. In order to use the Huggingface trainer, the data must be put into the correct format.  Huggingface provides a dataset library for this purpose.
+
+```python
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=small_train_dataset,
+    eval_dataset=small_eval_dataset,
+    compute_metrics=compute_metrics,
+)
+```
+
+```python
+trainer.train()
+```
+
+
 ### Results
 
 <img src="/output/conf_overview.png" alt="Alt text" title="Optional title">
