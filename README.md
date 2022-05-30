@@ -148,4 +148,8 @@ TF-ID's experiments performed very similarly to Bag of Words. In general, it can
 ### Outlook
 
 Based on the sentiment analysis, it could be shown that a text classification is well possible. It was found that classifiers often scored very high on Bag of Words and TF-ID. This is due to the fact that the data set is not balanced and for the most part there are good ratings. This could be improved by adjusting the data set or by using methods such as SMOTE to oversample the data set. This would make the model better at predicting low ratings. <br>
-The fine tuned Transformer finished best. This could still be improved by longer training. This could be achieved by training the model in a cloud, because the hardware of laptops is very limited compared to the resources needed to train huge neural networks.
+The fine tuned Transformer finished best. This could still be improved by longer training. This could be achieved by training the model in a cloud, because the hardware of laptops is very limited compared to the resources needed to train huge neural networks.<br>
+
+<br>
+
+My fine-tuned transformer can be found here: [Fine-tuned Transformer](https://huggingface.co/wuesten/sentiment-analysis-fh-kiel)
