@@ -91,7 +91,7 @@ Now we can easily fine tune the transformer.
 ```python
 trainer.train()
 ```
-After the training is done we can push the fine-tuned transformer to Huggingface hub. But before you can do this you need to registrate. My fined tuned transformer can be foun here: [Fine-tuned Transformer](https://huggingface.co/wuesten/sentiment-analysis-fh-kiel)
+After the training is done we can push the fine-tuned transformer to Huggingface hub. But before you can do this you need to registrate. My fined tuned transformer can be found here: [Fine-tuned Transformer](https://huggingface.co/wuesten/sentiment-analysis-fh-kiel)
 
 ```python
 tokenizer.push_to_hub("sentiment-analysis-fh-kiel")
@@ -122,5 +122,17 @@ test_df = test_df.astype({"stars": int})
 acc_score = accuracy_score(test_df["stars"] + 1, test_df["rating"])
 ```
 ### Results
+
+|                      model 	| accuracy 	|
+|---------------------------:	|---------:	|
+|                Transformer 	| 0.630378 	|
+|             Transformer EN 	| 0.623523 	|
+|     fine-tuned Transformer 	| 0.832487 	|
+|   Bag of words: GaussianNB 	| 0.365289 	|
+|  Bag of words: linear Reg. 	| 0.320661 	|
+| Bag of words: RandomForest 	| 0.525620 	|
+|          TF-ID: GaussianNB 	| 0.370248 	|
+|         TF-ID: linear Reg. 	| 0.438017 	|
+|        TF-ID: RandomForest 	| 0.519008 	|
 
 <img src="/output/conf_overview.png" alt="Alt text" title="Optional title">
