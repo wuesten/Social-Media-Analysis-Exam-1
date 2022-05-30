@@ -123,14 +123,14 @@ acc_score = accuracy_score(test_df["stars"] + 1, test_df["rating"])
 ```
 ### Results
 
-In this sentiment analysis, different approaches from Transformer to Bag of Words and TF-ID have been shown. It is not surprising that the transformers that have been trained on very large data sets perform better. Furthermore, a fine tuning of one transformer resulted in a significant increase from 63% to 80% acccuracy. It can be assumed that an improvement through longer fine tuning would show even better results. But due to limited hardware, I could only do 3 epochs, which took 6 hours. <br>
+In this sentiment analysis, different approaches from Transformer to Bag of Words and TF-ID have been shown. It is not surprising that the transformers that have been trained on very large data sets perform better. Furthermore, a fine tuning of one transformer resulted in a significant increase from 63% to 82% acccuracy. It can be assumed that an improvement through longer fine tuning would show even better results. But due to limited hardware, I could only do 3 epochs, which took 6 hours. <br>
 The TF-ID and Bag of Words approaches produced similar results for the same classifiers. The exception is linear regression, because it performed much better with TF-ID. The best results were achieved with the random forest classifier. With TF-ID 51.2% and with Bag of words 52.6% accuracy was achieved.
 
 |                      model 	| accuracy 	|
 |---------------------------:	|---------:	|
 |                Transformer 	| 0.630378 	|
 |             Transformer EN 	| 0.623523 	|
-|     fine-tuned Transformer 	| 0.832487 	|
+|     fine-tuned Transformer 	| 0.817680	|
 |   Bag of words: GaussianNB 	| 0.365289 	|
 |  Bag of words: linear Reg. 	| 0.320661 	|
 | Bag of words: RandomForest 	| 0.525620 	|
